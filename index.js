@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const allUserRoutes = require('./routes/allUsersRoute');
+const AddUserRoute = require('./routes/AddUserRoute')
 
 
 
@@ -19,6 +20,9 @@ app.use(express.json());
 
 // User Routes
 app.use('/api/allusers', allUserRoutes);
+app.use('/api/adduser', AddUserRoute)
+
+
 
 
 
