@@ -14,7 +14,7 @@ const client = new MongoClient(process.env.MongoURI, {
 async function connectDB() {
  try {
    await client.connect();
-   console.log('Connected to MongoDB     -----------');
+   console.log('Connected to MongoDB ');
    return client.db('NextGrowthDB');  
  } catch (error) {
    console.error('MongoDB connection error:', error);

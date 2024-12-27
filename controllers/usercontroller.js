@@ -33,6 +33,22 @@ async function addUser(req, res) {
 
 }
 
+// Controller function to get a single user by email
+async function getUserByEmail(req, res) {
+  try {
+    const { email } = req.params; // Extract email from URL parameters
+    const UserCollection = await getUserCollection();
+    const user = await UserCollection.findOne({ email }); // Find user by email
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error('Error fetching user by email:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}
 
 
-module.exports = { getAllUsers , addUser };
+
+module.exports = { getAllUsers , addUser  , getUserByEmail};
