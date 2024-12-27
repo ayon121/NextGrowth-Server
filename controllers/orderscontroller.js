@@ -15,7 +15,10 @@ async function createOrders(req, res) {
         if (result.acknowledged) {
             await UserCollection.updateOne(
                 { email }, // Find the user by email
-                { $push: { pendingOrders: order } } // Add the order to the pendingOrders array
+                { 
+                    $push: { pendingOrders: order }, // Add the order to the pendingOrders array
+                    $inc: { pendingOrdersCount: 1 }  // Increment the pendingOrdersCount field by 1
+                } 
             );
         }
 
