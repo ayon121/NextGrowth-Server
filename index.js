@@ -5,6 +5,7 @@ const AddUserRoute = require('./routes/AddUserRoute')
 const GetSingleUser = require('./routes/GetSingleUser')
 const CreateOrder = require('./routes/CreateOrders')
 const ContactUs = require('./routes/contactRoute')
+const Templates = require('./routes/getTemplates')
 
 
 
@@ -27,6 +28,7 @@ app.use('/api/adduser', AddUserRoute)
 app.use('/api/getuserbyemail/' , GetSingleUser)
 app.use('/api/createOrder/' , CreateOrder)
 app.use('/api/contact/' , ContactUs)
+app.use('/api/templates/' , Templates)
 
 
 

@@ -1,12 +1,12 @@
 const express = require('express');
-const { getAllUsers } = require('../controllers/usercontroller');
+const {getTemplates  } = require('../controllers/templatescontroller');
 
 
 const router = express.Router();
 
 
 // Route to get all tasks
-router.get('/', getAllUsers);
+router.get('/', getTemplates);
 
 
 
