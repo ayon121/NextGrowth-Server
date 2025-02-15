@@ -7,3 +7,4 @@ async function getContactCollections () {
 }
 
 module.exports = {getContactCollections}
+
